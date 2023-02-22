@@ -47,6 +47,9 @@ h6,
     Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+p{
+  color: black;
+}
 
 a {
   -webkit-transition: 0.3s all ease;
@@ -524,7 +527,7 @@ a:hover {
 }
 .hero-card-col  {
   /* width: 25%; */
-  height: 230px;
+  height: 350px;
   text-align: center;
  
 }
@@ -544,6 +547,9 @@ a:hover {
   #hero-img{
     width: 200px;
    }
+   #contact1{
+    display: none;
+   }
   }
 
    @media only screen and (min-width: 1200px){
@@ -552,6 +558,9 @@ a:hover {
      }
      #hero-img{
       width: 200px;
+     }
+     #contact1{
+      display: none;
      }
 }
 
@@ -762,3 +771,58 @@ h2{
   width: 300px;
   border-radius: 20px;
 }
+col i{
+  
+}
+.footer-icon{
+  text-align: center; display: flex; align-items: center; justify-content: center; 
+  gap: 10px;
+}
+.footer-icon img{
+  width: 35px;
+  height: 35px;
+}
+
+#input-name{
+  color: black;
+  border: none;
+  background: #f2f2f2;
+ padding-top: 15px;
+ padding-bottom: 15px;
+ width: 100%;
+}
+
+#input-name:active{
+  border: none;
+}
+
+.contact1 {
+  /* display: flex;
+            align-items: center;
+            justify-content: start;
+            flex-direction: column;
+            text-align: center;
+            margin-left: 20%;
+            height:80vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: start;
+  width: 100%;
+  height: 100vh; /* if you don't want it to take up the full screen, reduce this number */
+  overflow: hidden;
+  background-size: cover !important;
+}
+#contact-body{
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 768px) { 
+  #contact1{
+    display: none;
+  }
+  #spanq{
+    margin-top: 110vh;
+  }
+ }
