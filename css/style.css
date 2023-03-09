@@ -62,8 +62,9 @@ a:hover {
 }
 
 .hero {
-  height: 100vh;
+  height: 110vh;
   width: 100%;
+  /* background-color: navajowhite; */
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -479,7 +480,7 @@ a:hover {
   padding-left: 15px !important;
 }
 
-#row1 {
+#row1 ,.row1 {
   /* display: flex;
             align-items: center;
             justify-content: start;
@@ -554,7 +555,8 @@ a:hover {
 
    @media only screen and (min-width: 1200px){
     #heading1{
-      color: black; text-transform: uppercase; font-size: 55px;
+      color: black; 
+       font-size: 55px;
      }
      #hero-img{
       width: 200px;
@@ -631,6 +633,7 @@ a:hover {
 }
 .flex{
   display: flex;
+  
   align-items: center;
   justify-content: center;
 }
@@ -822,10 +825,22 @@ col i{
   #contact1{
     display: none;
   }
+  h1{
+    font-size: 20px;
+  }
+  img{
+    width: ;
+  }
   #spanq{
-    margin-top: 110vh;
+    margin-top: 114vh;
   }
   #mar60vh{
     margin-top: 60vh;
   }
  }
+ .flex_c{
+  display: flex;
+ flex-direction: column; 
+  /* align-items: center; */
+  justify-content: center;
+}
