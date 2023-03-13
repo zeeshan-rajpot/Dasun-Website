@@ -137,22 +137,22 @@
       
       
       
-      <form class='contact-form-blogger'>
+      <form class='contact-form-blogger' action="javascript:sendmail()" method="post">
         <div class='contact-form-wrap row'>
           <div class='col-md-6 mb-3'>
-            <label class='form-label fs-7 fw-bold' for='field-name'>Your Name</label>
-            <input class='form-control bg-transparent jt-border-light text-reset' id='field-name' name='name' required='' type='text' placeholder='Enter Name'/>
+            <label class='form-label fs-7 fw-bold' for='field-name' >Your Name</label>
+            <input id="Name" class='form-control bg-transparent jt-border-light text-reset' id='field-name' name='name' required='' type='text' placeholder='Enter Name'/>
           </div>
           <div class='col-md-6 mb-3'>
-            <label class='form-label fs-7 fw-bold' for='field-email'>Email Address</label>
-            <input class='form-control bg-transparent jt-border-light text-reset' id='field-email' name='email' required='' type='email' placeholder='Enter Email'/>
+            <label class='form-label fs-7 fw-bold' for='field-email' >Email Address</label>
+            <input id="Sender" class='form-control bg-transparent jt-border-light text-reset' id='field-email' name='email' required='' type='email' placeholder='Enter Email'/>
           </div>
           <div class='col-12 mb-3'>
-            <label class='form-label fs-7 fw-bold' for='field-message'>Message</label>
-            <textarea class='form-control bg-transparent jt-border-light text-reset' id='field-message' name='message' required='' rows='3' placeholder='Enter Message'></textarea>
+            <label class='form-label fs-7 fw-bold' for='field-message' >Message</label>
+            <textarea id="Message" class='form-control bg-transparent jt-border-light text-reset' id='field-message' name='message' required='' rows='3' placeholder='Enter Message'></textarea>
           </div>
           <div class='col-12 mb-3'>
-            <button href="#" class="myButton">Send Message         <i class="fa-solid fa-arrow-right"></i></button>
+            <button href="#"  onclick="sendmail()" class="myButton">Send Message         <i class="fa-solid fa-arrow-right"></i></button>
           </div>
         </div>
         <div
@@ -284,31 +284,51 @@
       <script src="js/bootstrap.min.js"></script>
       <script src="js/jquery.sticky.js"></script>
       <script src="js/main.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
-      <script>
-        $(document).ready(function(){
-      $('.customer-logos').slick({
-          slidesToShow: 6,
-          slidesToScroll: 1,
-          autoplay: true,
-          autoplaySpeed: 800,
-          arrows: false,
-          dots: false,
-          pauseOnHover: false,
-          responsive: [{
-              breakpoint: 768,
-              settings: {
-                  slidesToShow: 4
-              }
-          }, {
-              breakpoint: 520,
-              settings: {
-                  slidesToShow: 3
-              }
-          }]
-      });
-  });
-      </script>
+      <script src="https://smtpjs.com/v3/smtp.js"></script>
+      <script>  
+  
+          function sendmail(){
+         
+                 var name = $('#Name').val();
+                 var email = $('#Sender').val();
+                
+           var message = $('#Message').val();
+ 
+                 
+       
+                 var Body='Name: '+name+'<br>Email: '+email+'<br>Message: '+message;
+                 console.log(name, email, message);
+           console.log (Body);
+                 Email.send({
+         Host : "smtp.elasticemail.com",
+         Username : "jhonnybaig0@gmail.com",
+         Password : "9C4108BB2DE41825A0E0BF5D1D0DECE65E7C",
+      //    SecureToken:"2c3cb63b-6dec-4a6c-81f2-a4423a32260e",
+         To : 'zeeshanrajpot74@gmail.com',
+         From : 'jhonnybaig0@gmail.com',
+         Subject : "This is the email from"+name ,
+         Body : Body
+                 }).then(
+                     message =>{
+                         console.log (message);
+                         if(message=='OK'){
+                         alert('Your mail has been send. Thank you for connecting.');
+                         }
+                         else{
+                             console.error (message);
+                             alert('There is error at sending message. ')
+                             
+                         }
+       
+                     }
+                 );
+                    }
+       
+       
+            //  }'<br>Subject: '+subject+
+       
+       
+         </script>
   
     </body>
   </html>
